@@ -98,6 +98,22 @@ function dostavimSelect(selector, name, tabIndex, className, id, label) {
             this.input.select();
         }.bind(this));
 
+        this.filter = function (value) {
+            this.regExp = new RegExp('^.*'.concat(value, '.*$'), 'im');
+            for (this.childElementIndex = 0; this.childElementIndex < this.list.childElementCount; this.childElementIndex = this.childElementIndex + 1) {
+                if (this.regExp.test(this.list.children[this.childElementIndex].textContent)) {
+                    this.list.children[this.childElementIndex].style.display = 'block';
+                } else {
+                    this.list.children[this.childElementIndex].style.display = 'none';
+                }
+            }
+            if (this.input.value.length === 0) {
+                for (this.childElementIndex = 0; this.childElementIndex < this.list.childElementCount; this.childElementIndex = this.childElementIndex + 1) {
+                    this.list.children[this.childElementIndex].style.display = 'block';
+                }
+            }
+        }.bind(this);        
+
         this.button.addEventListener('click', function () {
             if (this.list.style.display === 'none') {
                 this.list.style.display = 'block';
@@ -170,22 +186,6 @@ function dostavimSelect(selector, name, tabIndex, className, id, label) {
         this.element.after(this.root);
 
         this.element.parentNode.removeChild(this.element);
-
-        this.filter = function (value) {
-            this.regExp = new RegExp('^.*'.concat(value, '.*$'), 'im');
-            for (this.childElementIndex = 0; this.childElementIndex < this.list.childElementCount; this.childElementIndex = this.childElementIndex + 1) {
-                if (this.regExp.test(this.list.children[this.childElementIndex].textContent)) {
-                    this.list.children[this.childElementIndex].style.display = 'block';
-                } else {
-                    this.list.children[this.childElementIndex].style.display = 'none';
-                }
-            }
-            if (this.input.value.length === 0) {
-                for (this.childElementIndex = 0; this.childElementIndex < this.list.childElementCount; this.childElementIndex = this.childElementIndex + 1) {
-                    this.list.children[this.childElementIndex].style.display = 'block';
-                }
-            }
-        }.bind(this);
     } catch (e) {
         console.log(e);
     }
