@@ -17,7 +17,7 @@ function dostavimSelect(selector, name, tabIndex, className, id, label) {
         this.div = document.createElement('div');
 
         this.label = document.createElement('div');
-        this.input = document.createElement('input');
+        this.input = document.createElement('div');
         this.hiddenInput = document.createElement('input');
         this.button = document.createElement('div');
         this.icon = document.createElement('div');
@@ -98,22 +98,6 @@ function dostavimSelect(selector, name, tabIndex, className, id, label) {
             this.input.select();
         }.bind(this));
 
-        this.input.addEventListener('input', function () {
-            this.regExp = new RegExp('^.*'.concat(this.input.value, '.*$'), 'im');
-            for (this.childElementIndex = 0; this.childElementIndex < this.list.childElementCount; this.childElementIndex = this.childElementIndex + 1) {
-                if (this.regExp.test(this.list.children[this.childElementIndex].textContent)) {
-                    this.list.children[this.childElementIndex].style.display = 'block';
-                } else {
-                    this.list.children[this.childElementIndex].style.display = 'none';
-                }
-            }
-            if (this.input.value.length === 0) {
-                for (this.childElementIndex = 0; this.childElementIndex < this.list.childElementCount; this.childElementIndex = this.childElementIndex + 1) {
-                    this.list.children[this.childElementIndex].style.display = 'block';
-                }
-            }
-        }.bind(this));
-
         this.button.addEventListener('click', function () {
             if (this.list.style.display === 'none') {
                 this.list.style.display = 'block';
@@ -152,7 +136,7 @@ function dostavimSelect(selector, name, tabIndex, className, id, label) {
             this.item.textContent = this.element.children[this.childElementIndex].textContent;
 
             this.item.addEventListener('click', function (e) {
-                this.input.value = e.target.textContent;
+                this.input.textContent = e.target.textContent;
                 this.hiddenInput.value = e.target.getAttribute('data-key-property');
                 setTimeout(function () {
                     this.list.style.display = 'none';
