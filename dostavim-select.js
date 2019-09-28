@@ -125,7 +125,7 @@ function dostavimSelect(selector, name, tabIndex, className, id, label) {
         for (this.childElementIndex = 0; this.childElementIndex < this.element.childElementCount; this.childElementIndex = this.childElementIndex + 1) {
             this.item = document.createElement('div');
 
-            this.input.value = this.element.children[0].textContent;
+            this.input.textContent = this.element.children[0].textContent;
             this.hiddenInput.value = this.element.children[0].value;
 
             this.item.style.fontSize = '16px';
