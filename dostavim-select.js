@@ -25,76 +25,76 @@ function dostavimAutocomplete(selector, name, tabIndex, className, id, label) {
         this.listSection = document.createElement('div');
         this.list = document.createElement('div');
 
-        this.div.style.cssText = 'display:-webkit-box;display:flex';
-        this.div.style.fontFamily = 'sans-serif';
-        this.div.style.fontSize = '13px';
+        this.div.style.cssText = 'display:-webkit-box !important;display:flex !important';
+        this.div.style.fontFamily = 'sans-serif !important';
+        this.div.style.fontSize = '13px !important';
 
         this.label.textContent = label;
-        this.label.style.color = 'grey';
-        this.label.style.position = 'absolute';
-        this.label.style.top = '10px';
-        this.label.style.left = '15px';
+        this.label.style.color = 'grey !important';
+        this.label.style.position = 'absolute !important';
+        this.label.style.top = '10px !important';
+        this.label.style.left = '15px !important';
 
         this.input.tabIndex = tabIndex;
 
-        this.input.style.width = '100%';
-        this.input.style.border = '1px solid lightgrey';
-        this.input.style.borderRight = '0';
-        this.input.style.borderTopLeftRadius = '5px';
-        this.input.style.borderBottomLeftRadius = '5px';
-        this.input.style.borderTopRightRadius = '0';
-        this.input.style.borderBottomRightRadius = '0';
-        this.input.style.fontSize = '16px';
-        this.input.style.padding = '35px 15px 19px 15px';
+        this.input.style.width = '100% !important';
+        this.input.style.border = '1px solid lightgrey !important';
+        this.input.style.borderRight = '0 !important';
+        this.input.style.borderTopLeftRadius = '5px!important';
+        this.input.style.borderBottomLeftRadius = '5px !important';
+        this.input.style.borderTopRightRadius = '0 !important';
+        this.input.style.borderBottomRightRadius = '0 !important';
+        this.input.style.fontSize = '16px !important';
+        this.input.style.padding = '35px 15px 19px 15px !important';
 
         this.hiddenInput.type = 'hidden';
         this.hiddenInput.name = name;
         this.hiddenInput.id = id;
         this.hiddenInput.className = className;
 
-        this.button.style.width = '35px';
-        this.button.style.background = 'white';
-        this.button.style.border = '1px solid lightgrey';
-        this.button.style.borderTopRightRadius = '5px';
-        this.button.style.borderBottomRightRadius = '5px';
-        this.button.style.cursor = 'pointer';
-        this.button.style.padding = '16px 10px 5px 10px';
+        this.button.style.width = '35px !important';
+        this.button.style.background = 'white !important';
+        this.button.style.border = '1px solid lightgrey !important';
+        this.button.style.borderTopRightRadius = '5px !important';
+        this.button.style.borderBottomRightRadius = '5px !important';
+        this.button.style.cursor = 'pointer !important';
+        this.button.style.padding = '16px 10px 5px 10px!important';
 
-        this.icon.style.width = '10px';
-        this.icon.style.height = '10px';
-        this.icon.style.borderTop = '1px solid black';
-        this.icon.style.borderLeft = '1px solid black';
-        this.icon.style.transform = 'rotate(-135deg)';
-        this.icon.style.webkitTransition = '.2s all';
-        this.icon.style.transition = '.2s all';
-        this.icon.style.marginTop = '10px';
-        this.icon.style.marginLeft = 'auto';
-        this.icon.style.marginRight = 'auto';
+        this.icon.style.width = '10px !important';
+        this.icon.style.height = '10px !important';
+        this.icon.style.borderTop = '1px solid black !important';
+        this.icon.style.borderLeft = '1px solid black !important';
+        this.icon.style.transform = 'rotate(-135deg) !important';
+        this.icon.style.webkitTransition = '.2s all !important';
+        this.icon.style.transition = '.2s all !important';
+        this.icon.style.marginTop = '10px !important';
+        this.icon.style.marginLeft = 'auto !important';
+        this.icon.style.marginRight = 'auto !important';
 
-        this.listSection.style.fontFamily = 'sans-serif';
-        this.listSection.style.position = 'relative';
+        this.listSection.style.fontFamily = 'sans-serif !important';
+        this.listSection.style.position = 'relative !important';
 
-        this.list.style.display = 'none';
-        this.list.style.width = '100%';
-        this.list.style.background = 'white';
-        this.list.style.outline = '1px solid lightgrey';
-        this.list.style.top = '2px';
-        this.list.style.position = 'absolute';
-        this.list.style.zIndex = '1';
+        this.list.style.display = 'none !important';
+        this.list.style.width = '100% !important';
+        this.list.style.background = 'white !important';
+        this.list.style.outline = '1px solid lightgrey !important';
+        this.list.style.top = '2px !important';
+        this.list.style.position = 'absolute !important';
+        this.list.style.zIndex = '1 !important';
 
         this.input.addEventListener('focus', function () {
-            this.list.style.display = 'block';
-            this.icon.style.transform = 'rotate(45deg)';
-            this.icon.style.marginTop = '15px';
+            this.list.style.display = 'block !important';
+            this.icon.style.transform = 'rotate(45deg) !important';
+            this.icon.style.marginTop = '15px !important';
             setTimeout(function () {
                 this.input.select();
             }.bind(this));
         }.bind(this));
 
         this.input.addEventListener('click', function () {
-            this.list.style.display = 'block';
-            this.icon.style.transform = 'rotate(45deg)';
-            this.icon.style.marginTop = '15px';
+            this.list.style.display = 'block !important';
+            this.icon.style.transform = 'rotate(45deg) !important';
+            this.icon.style.marginTop = '15px !important';
             this.input.select();
         }.bind(this));
 
@@ -102,38 +102,38 @@ function dostavimAutocomplete(selector, name, tabIndex, className, id, label) {
             this.regExp = new RegExp('^.*'.concat(this.input.value, '.*$'), 'im');
             for (this.childElementIndex = 0; this.childElementIndex < this.list.childElementCount; this.childElementIndex = this.childElementIndex + 1) {
                 if (this.regExp.test(this.list.children[this.childElementIndex].textContent)) {
-                    this.list.children[this.childElementIndex].style.display = 'block';
+                    this.list.children[this.childElementIndex].style.display = 'block !important';
                 } else {
-                    this.list.children[this.childElementIndex].style.display = 'none';
+                    this.list.children[this.childElementIndex].style.display = 'none !important';
                 }
             }
             if (this.input.value.length === 0) {
                 for (this.childElementIndex = 0; this.childElementIndex < this.list.childElementCount; this.childElementIndex = this.childElementIndex + 1) {
-                    this.list.children[this.childElementIndex].style.display = 'block';
+                    this.list.children[this.childElementIndex].style.display = 'block !important';
                 }
             }
         }.bind(this));
 
         this.button.addEventListener('click', function () {
             if (this.list.style.display === 'none') {
-                this.list.style.display = 'block';
-                this.icon.style.transform = 'rotate(45deg)';
-                this.icon.style.marginTop = '15px';
+                this.list.style.display = 'block !important';
+                this.icon.style.transform = 'rotate(45deg) !important';
+                this.icon.style.marginTop = '15px !important';
                 setTimeout(function () {
                     this.input.select();
                 }.bind(this));
             } else if (this.list.style.display === 'block') {
-                this.list.style.display = 'none';
-                this.icon.style.transform = 'rotate(-135deg)';
-                this.icon.style.marginTop = '10px';
+                this.list.style.display = 'none !important';
+                this.icon.style.transform = 'rotate(-135deg) !important';
+                this.icon.style.marginTop = '10px !important';
             }
         }.bind(this));
         
         document.addEventListener('click', function (e) {
             if (e.target !== this.element && e.target !== this.root && e.target !== this.divSection && e.target !== this.div && e.target !== this.input && e.target !== this.button && e.target !== this.icon && e.target !== this.listSection && e.target !== this.list && e.target !== this.item ) {
-                this.list.style.display = 'none';
-                this.icon.style.transform = 'rotate(-135deg)';
-                this.icon.style.marginTop = '10px';
+                this.list.style.display = 'none !important';
+                this.icon.style.transform = 'rotate(-135deg) !important';
+                this.icon.style.marginTop = '10px !important';
             }
             return;
         }.bind(this));
@@ -144,9 +144,9 @@ function dostavimAutocomplete(selector, name, tabIndex, className, id, label) {
             this.input.value = this.element.children[0].textContent;
             this.hiddenInput.value = this.element.children[0].value;
 
-            this.item.style.fontSize = '16px';
-            this.item.style.cursor = 'pointer';
-            this.item.style.padding = '10px 15px 10px 15px';
+            this.item.style.fontSize = '16px !important';
+            this.item.style.cursor = 'pointer !important';
+            this.item.style.padding = '10px 15px 10px 15px !important';
 
             this.item.setAttribute('data-key-property', this.element.children[this.childElementIndex].getAttribute('value'));
             this.item.textContent = this.element.children[this.childElementIndex].textContent;
@@ -155,18 +155,18 @@ function dostavimAutocomplete(selector, name, tabIndex, className, id, label) {
                 this.input.value = e.target.textContent;
                 this.hiddenInput.value = e.target.getAttribute('data-key-property');
                 setTimeout(function () {
-                    this.list.style.display = 'none';
+                    this.list.style.display = 'none !important';
                 }.bind(this));
-                this.icon.style.transform = 'rotate(-135deg)';
-                this.icon.style.marginTop = '10px';
+                this.icon.style.transform = 'rotate(-135deg) !important';
+                this.icon.style.marginTop = '10px !important';
             }.bind(this));
 
             this.item.addEventListener('mouseover', function (e) {
-                e.target.style.background = 'lightgrey';
+                e.target.style.background = 'lightgrey !important';
             }.bind(this));
 
             this.item.addEventListener('mouseout', function (e) {
-                e.target.style.background = 'white';
+                e.target.style.background = 'white !important';
             }.bind(this));
 
             this.list.appendChild(this.item);
