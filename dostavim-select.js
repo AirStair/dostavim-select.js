@@ -9,6 +9,8 @@
 */
 function dostavimSelect(selector, name, tabIndex, className, id, label) {
     try {
+        this.data = [];
+
         this.element = document.querySelector(selector);
 
         this.root = document.createElement('div');
@@ -138,11 +140,11 @@ function dostavimSelect(selector, name, tabIndex, className, id, label) {
             return;
         }.bind(this));
 
-        for (this.childElementIndex = 0; this.childElementIndex < this.element.childElementCount; this.childElementIndex = this.childElementIndex + 1) {
+        for (this.childElementIndex = 0; this.childElementIndex < this.data.length; this.childElementIndex = this.childElementIndex + 1) {
             this.item = document.createElement('div');
 
-            this.input.textContent = this.element.children[0].textContent;
-            this.hiddenInput.value = this.element.children[0].value;
+            this.input.textContent = this.data[0].textProperty;
+            this.hiddenInput.value = this.data[0].keyProperty;
 
             this.item.style.fontSize = '16px';
             this.item.style.cursor = 'pointer';
